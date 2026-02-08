@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligence CRUD App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <button onclick="showPage('reports')">דיווח חדש</button>
+        <button onclick="showPage('dashboard')">לוח בקרה</button>
+    </nav>
+
+    <main id="app">
+        <section id="reports-page" class="page">
+            <h1>דיווח סוכן שטח</h1>
+            <form id="report-form" class="card">
+                <div class="form-group">
+                    <label for="agentName">Agent Name:</label>
+                    <input type="text" id="agentName" required>
+                </div>
+                <div class="form-group">
+                    <label for="agentCode">Agent Code:</label>
+                    <input type="text" id="agentCode" required>
+                </div>
+                <div class="form-group">
+                    <label for="target">Target:</label>
+                    <input type="text" id="target" required>
+                </div>
+                <div class="form-group">
+                    <label for="info">Information:</label>
+                    <textarea id="info" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Send Report</button>
+            </form>
+        </section>
+        <section id="show-all-reports">
+            <h1>דיווחים</h1>
+            <form id="get-reports">
+                <label></label>
+            </form>
+        </section>
+
+        <section id="dashboard-page" class="page hidden">
+            <h1>Control Panel - Intelligence</h1>
+            <div class="controls card">
+                <button id="sort-time">Sort By Time</button>
+                <button id="sort-target">Sort By Target</button>
+            </div>
+            <div id="reports-container" class="grid-container"></div>
+        </section>
+    </main>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
